@@ -31,9 +31,54 @@
           <p>Here we can set or get the mood:</p>
           <label for="mood">Input Mood:</label> <br />
           <input type="text" id="mood" />
-          <button onclick="getMood()">Get Mood</button>
-          <button onclick="setMood()">Set Mood</button>
+        </div>
+
+        <div>
+            <button onclick="getMood()">Get Mood</button>
+        </div>
+        <div>
+            <button onclick="setMood()">Set Mood</button>
         </div>
       
   </body>
 </html>
+
+<script
+  src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+  type="application/javascript"
+></script>
+
+
+<script>
+    const MoodContractAddress = "0x6ef5a4a7ef811c3acd40618472b6a512ad466605";
+    const MoodContractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_mood",
+				"type": "string"
+			}
+		],
+		"name": "setMood",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMood",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+    let MoodContract;
+    let signer;
+</script>
