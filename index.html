@@ -50,6 +50,7 @@
 
 
 <script>
+    //this is the contract that I created on remix
     const MoodContractAddress = "0x6ef5a4a7ef811c3acd40618472b6a512ad466605";
     const MoodContractABI = [
 	{
@@ -103,7 +104,6 @@ async function getMood() {
 }
 
 //setmood function 
-
 async function setMood() {
   const mood = document.getElementById("mood").value;
   const setMoodPromise = MoodContract.setMood(mood);
