@@ -81,7 +81,9 @@
 ];
     let MoodContract;
     let signer;
+    
     const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
+
     provider.send("eth_requestAccounts", []).then(() => {
   provider.listAccounts().then((accounts) => {
     signer = provider.getSigner(accounts[0]);
@@ -92,4 +94,11 @@
     );
   });
 });
+
+//get mood function
+async function getMood() {
+  const getMoodPromise = MoodContract.getMood();
+  const Mood = await getMoodPromise;
+  console.log(Mood);
+}
 </script>
